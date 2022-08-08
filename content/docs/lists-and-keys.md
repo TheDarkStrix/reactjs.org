@@ -108,6 +108,16 @@ const todoItems = todos.map((todo) =>
 );
 ```
 
+When you want to call function inside map:
+
+```js{2,3}
+const renderList = (number , id) => <div key={id}> {number} </div>
+
+const todoItems = todos.map((todo) =>
+  renderList(todo.text , todo.id)
+);
+```
+
 When you don't have stable IDs for rendered items, you may use the item index as a key as a last resort:
 
 ```js{2,3}
